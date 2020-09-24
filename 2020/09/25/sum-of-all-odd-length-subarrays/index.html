@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>sum-of-all-odd-length-subarrays | Leetcode records of Zizhuo Wang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="所有奇数长度子数组的和   Category Difficulty Likes Dislikes    algorithms Easy (83.87%) 7 -   Tags  Companies  给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。 子数组 定义为原数组中的一个连续子序列。 请你返回 arr 中 所有奇数长度子数组的和 。 示例 1： 1234567891011">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sum-of-all-odd-length-subarrays">
+<meta property="og:url" content="http://example.com/2020/09/25/sum-of-all-odd-length-subarrays/index.html">
+<meta property="og:site_name" content="Leetcode records of Zizhuo Wang">
+<meta property="og:description" content="所有奇数长度子数组的和   Category Difficulty Likes Dislikes    algorithms Easy (83.87%) 7 -   Tags  Companies  给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。 子数组 定义为原数组中的一个连续子序列。 请你返回 arr 中 所有奇数长度子数组的和 。 示例 1： 1234567891011">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-24T18:27:25.000Z">
+<meta property="article:modified_time" content="2020-09-24T18:47:36.712Z">
+<meta property="article:author" content="Zizhuo Wang">
+<meta property="article:tag" content="array">
+<meta property="article:tag" content="easy">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Leetcode records of Zizhuo Wang" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Leetcode records of Zizhuo Wang</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-sum-of-all-odd-length-subarrays" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/09/25/sum-of-all-odd-length-subarrays/" class="article-date">
+  <time class="dt-published" datetime="2020-09-24T18:27:25.000Z" itemprop="datePublished">2020-09-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      sum-of-all-odd-length-subarrays
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="所有奇数长度子数组的和"><a href="#所有奇数长度子数组的和" class="headerlink" title="所有奇数长度子数组的和"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-all-odd-length-subarrays/description/">所有奇数长度子数组的和</a></h1><table>
+<thead>
+<tr>
+<th align="center">Category</th>
+<th align="center">Difficulty</th>
+<th align="center">Likes</th>
+<th align="center">Dislikes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">algorithms</td>
+<td align="center">Easy (83.87%)</td>
+<td align="center">7</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
+<details style="color: rgb(212, 212, 212); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif, &quot;Microsoft Yahei UI&quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Tags</strong></summary></details>
+
+<details style="color: rgb(212, 212, 212); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif, &quot;Microsoft Yahei UI&quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Companies</strong></summary></details>
+
+<p>给你一个正整数数组 <code>arr</code> ，请你计算所有可能的奇数长度子数组的和。</p>
+<p><strong>子数组</strong> 定义为原数组中的一个连续子序列。</p>
+<p>请你返回 <code>arr</code> 中 <strong>所有奇数长度子数组的和</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">输入：arr &#x3D; [1,4,2,5,3]</span><br><span class="line">输出：58</span><br><span class="line">解释：所有奇数长度子数组和它们的和为：</span><br><span class="line">[1] &#x3D; 1</span><br><span class="line">[4] &#x3D; 4</span><br><span class="line">[2] &#x3D; 2</span><br><span class="line">[5] &#x3D; 5</span><br><span class="line">[3] &#x3D; 3</span><br><span class="line">[1,4,2] &#x3D; 7</span><br><span class="line">[4,2,5] &#x3D; 11</span><br><span class="line">[2,5,3] &#x3D; 10</span><br><span class="line">[1,4,2,5,3] &#x3D; 15</span><br><span class="line">我们将所有值求和得到 1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 &#x3D; 58</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：arr &#x3D; [1,2]</span><br><span class="line">输出：3</span><br><span class="line">解释：总共只有 2 个长度为奇数的子数组，[1] 和 [2]。它们的和为 3 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：arr &#x3D; [10,11,12]</span><br><span class="line">输出：66</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= arr.length &lt;= 100</code></li>
+<li><code>1 &lt;= arr[i] &lt;= 1000</code></li>
+</ul>
+<h1 id="解"><a href="#解" class="headerlink" title="解"></a>解</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># @lc app=leetcode.cn id=1588 lang=python3</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># [1588] 所有奇数长度子数组的和</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=start</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sumOddLengthSubarrays</span>(<span class="params">self, arr: List[int]</span>) -&gt; int:</span></span><br><span class="line">        res=<span class="number">0</span></span><br><span class="line">        arr_len=len(arr)</span><br><span class="line">        <span class="keyword">for</span> sub_len <span class="keyword">in</span> range(<span class="number">1</span>,arr_len+<span class="number">1</span>,<span class="number">2</span>):</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(arr_len-sub_len+<span class="number">1</span>):</span><br><span class="line">                res += sum(arr[i:i+sub_len])</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"><span class="comment"># @lc code=end</span></span><br><span class="line"></span><br><span class="line">Accepted</span><br><span class="line"><span class="number">96</span>/<span class="number">96</span> cases passed (<span class="number">80</span> ms)</span><br><span class="line">Your runtime beats <span class="number">27.29</span> % of python3 submissions</span><br><span class="line">Your memory usage beats <span class="number">81.4</span> % of python3 submissions (<span class="number">13.3</span> MB)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/25/sum-of-all-odd-length-subarrays/" data-id="ckfh668vg0000tsw8avidad74" data-title="sum-of-all-odd-length-subarrays" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/array/" rel="tag">array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easy/" rel="tag">easy</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/25/xor-operation-in-an-array/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">xor-operation-in-an-array</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Order/" rel="tag">Order</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/array/" rel="tag">array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/easy/" rel="tag">easy</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Order/" style="font-size: 10px;">Order</a> <a href="/tags/array/" style="font-size: 20px;">array</a> <a href="/tags/easy/" style="font-size: 20px;">easy</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/25/sum-of-all-odd-length-subarrays/">sum-of-all-odd-length-subarrays</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/25/xor-operation-in-an-array/">xor-operation-in-an-array</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/25/shuffle-the-array/">shuffle-the-array</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/25/number-of-good-pairs/">number-of-good-pairs</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/25/kids-with-the-greatest-number-of-candies/">kids-with-the-greatest-number-of-candies</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2020 Zizhuo Wang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
