@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>how-many-numbers-are-smaller-than-the-current-number | Leetcode records of Zizhuo Wang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="有多少小于当前数字的数字   Category Difficulty Likes Dislikes    algorithms Easy (81.87%) 60 -   Tags  Companies  给你一个数组 nums，对于其中每个元素 nums[i]，请你统计数组中比它小的所有数字的数目。 换而言之，对于每个 nums[i] 你必须计算出有效的 j 的数量，其中 j 满足 j !&#x3D; i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="how-many-numbers-are-smaller-than-the-current-number">
+<meta property="og:url" content="http://example.com/2020/09/25/how-many-numbers-are-smaller-than-the-current-number/index.html">
+<meta property="og:site_name" content="Leetcode records of Zizhuo Wang">
+<meta property="og:description" content="有多少小于当前数字的数字   Category Difficulty Likes Dislikes    algorithms Easy (81.87%) 60 -   Tags  Companies  给你一个数组 nums，对于其中每个元素 nums[i]，请你统计数组中比它小的所有数字的数目。 换而言之，对于每个 nums[i] 你必须计算出有效的 j 的数量，其中 j 满足 j !&#x3D; i">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-25T03:42:43.000Z">
+<meta property="article:modified_time" content="2020-09-25T05:01:35.934Z">
+<meta property="article:author" content="Zizhuo Wang">
+<meta property="article:tag" content="array">
+<meta property="article:tag" content="easy">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Leetcode records of Zizhuo Wang" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Leetcode records of Zizhuo Wang</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-how-many-numbers-are-smaller-than-the-current-number" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/09/25/how-many-numbers-are-smaller-than-the-current-number/" class="article-date">
+  <time class="dt-published" datetime="2020-09-25T03:42:43.000Z" itemprop="datePublished">2020-09-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      how-many-numbers-are-smaller-than-the-current-number
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="有多少小于当前数字的数字"><a href="#有多少小于当前数字的数字" class="headerlink" title="有多少小于当前数字的数字"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/how-many-numbers-are-smaller-than-the-current-number/description/">有多少小于当前数字的数字</a></h1><table>
+<thead>
+<tr>
+<th align="center">Category</th>
+<th align="center">Difficulty</th>
+<th align="center">Likes</th>
+<th align="center">Dislikes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">algorithms</td>
+<td align="center">Easy (81.87%)</td>
+<td align="center">60</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
+<details style="color: rgb(212, 212, 212); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif, &quot;Microsoft Yahei UI&quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Tags</strong></summary></details>
+
+<details style="color: rgb(212, 212, 212); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe WPC&quot;, &quot;Segoe UI&quot;, system-ui, Ubuntu, &quot;Droid Sans&quot;, sans-serif, &quot;Microsoft Yahei UI&quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;"><summary><strong>Companies</strong></summary></details>
+
+<p>给你一个数组 <code>nums</code>，对于其中每个元素 <code>nums[i]</code>，请你统计数组中比它小的所有数字的数目。</p>
+<p>换而言之，对于每个 <code>nums[i]</code> 你必须计算出有效的 <code>j</code> 的数量，其中 <code>j</code> 满足 <code>j != i</code> <strong>且</strong> <code>nums[j] &lt; nums[i]</code> 。</p>
+<p>以数组形式返回答案。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入：nums &#x3D; [8,1,2,2,3]</span><br><span class="line">输出：[4,0,1,1,3]</span><br><span class="line">解释： </span><br><span class="line">对于 nums[0]&#x3D;8 存在四个比它小的数字：（1，2，2 和 3）。 </span><br><span class="line">对于 nums[1]&#x3D;1 不存在比它小的数字。</span><br><span class="line">对于 nums[2]&#x3D;2 存在一个比它小的数字：（1）。 </span><br><span class="line">对于 nums[3]&#x3D;2 存在一个比它小的数字：（1）。 </span><br><span class="line">对于 nums[4]&#x3D;3 存在三个比它小的数字：（1，2 和 2）。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums &#x3D; [6,5,4,8]</span><br><span class="line">输出：[2,1,0,3]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums &#x3D; [7,7,7,7]</span><br><span class="line">输出：[0,0,0,0]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 500</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 100</code></li>
+</ul>
+<h1 id="解-O-n-2"><a href="#解-O-n-2" class="headerlink" title="解$O(n^2)$"></a>解$O(n^2)$</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># @lc app=leetcode.cn id=1365 lang=python3</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># [1365] 有多少小于当前数字的数字</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=start</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">smallerNumbersThanCurrent</span>(<span class="params">self, nums: List[int]</span>) -&gt; List[int]:</span></span><br><span class="line">        len_nums=len(nums)</span><br><span class="line">        res=[]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len_nums):</span><br><span class="line">            res.append(sum(<span class="number">1</span> <span class="keyword">for</span> j <span class="keyword">in</span> range(len_nums) <span class="keyword">if</span> i!=j <span class="keyword">and</span> nums[i]&gt;nums[j]))</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"><span class="comment"># @lc code=end</span></span><br><span class="line"></span><br><span class="line">Accepted</span><br><span class="line"><span class="number">103</span>/<span class="number">103</span> cases passed (<span class="number">532</span> ms)</span><br><span class="line">Your runtime beats <span class="number">6.93</span> % of python3 submissions</span><br><span class="line">Your memory usage beats <span class="number">83.59</span> % of python3 submissions (<span class="number">13.3</span> MB)</span><br></pre></td></tr></table></figure>
+
+<h1 id="优化-O-nlogn"><a href="#优化-O-nlogn" class="headerlink" title="优化$O(nlogn)$"></a>优化$O(nlogn)$</h1><p>升序排序。index()函数在列表中有多个相同的值时，一定会返回第一个值的下标。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># @lc app=leetcode.cn id=1365 lang=python3</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># [1365] 有多少小于当前数字的数字</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @lc code=start</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">smallerNumbersThanCurrent</span>(<span class="params">self, nums: List[int]</span>) -&gt; List[int]:</span></span><br><span class="line">        nums_sorted = sorted(nums)</span><br><span class="line">        <span class="keyword">return</span> [nums_sorted.index(i) <span class="keyword">for</span> i <span class="keyword">in</span> nums]</span><br><span class="line"><span class="comment"># @lc code=end</span></span><br><span class="line"></span><br><span class="line">Accepted</span><br><span class="line"><span class="number">103</span>/<span class="number">103</span> cases passed (<span class="number">72</span> ms)</span><br><span class="line">Your runtime beats <span class="number">66.22</span> % of python3 submissions</span><br><span class="line">Your memory usage beats <span class="number">20.92</span> % of python3 submissions (<span class="number">13.4</span> MB)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/25/how-many-numbers-are-smaller-than-the-current-number/" data-id="ckfhs2whg00000ww8fzieeomn" data-title="how-many-numbers-are-smaller-than-the-current-number" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/array/" rel="tag">array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easy/" rel="tag">easy</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/25/matrix-diagonal-sum/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">matrix-diagonal-sum</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Order/" rel="tag">Order</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/array/" rel="tag">array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/easy/" rel="tag">easy</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Order/" style="font-size: 10px;">Order</a> <a href="/tags/array/" style="font-size: 20px;">array</a> <a href="/tags/easy/" style="font-size: 20px;">easy</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/25/how-many-numbers-are-smaller-than-the-current-number/">how-many-numbers-are-smaller-than-the-current-number</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/25/matrix-diagonal-sum/">matrix-diagonal-sum</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/25/decompress-run-length-encoded-list/">decompress-run-length-encoded-list</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/25/create-target-array-in-the-given-order/">create-target-array-in-the-given-order</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/25/sum-of-all-odd-length-subarrays/">sum-of-all-odd-length-subarrays</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2020 Zizhuo Wang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
