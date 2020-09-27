@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>kth-node-from-end-of-list-lcci | Leetcode records of Zizhuo Wang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="面试题 02.02. 返回倒数第 k 个节点实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。 注意：本题相对原题稍作改动 示例： 12输入： 1-&gt;2-&gt;3-&gt;4-&gt;5 和 k &#x3D; 2输出： 4  说明： 给定的 k 保证是有效的。 解（双指针）123456789101112131415161718192021# Definition for si">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kth-node-from-end-of-list-lcci">
+<meta property="og:url" content="http://example.com/2020/09/27/kth-node-from-end-of-list-lcci/index.html">
+<meta property="og:site_name" content="Leetcode records of Zizhuo Wang">
+<meta property="og:description" content="面试题 02.02. 返回倒数第 k 个节点实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。 注意：本题相对原题稍作改动 示例： 12输入： 1-&gt;2-&gt;3-&gt;4-&gt;5 和 k &#x3D; 2输出： 4  说明： 给定的 k 保证是有效的。 解（双指针）123456789101112131415161718192021# Definition for si">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-27T11:26:41.000Z">
+<meta property="article:modified_time" content="2020-09-27T11:36:00.775Z">
+<meta property="article:author" content="Zizhuo Wang">
+<meta property="article:tag" content="easy">
+<meta property="article:tag" content="Linked List">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Leetcode records of Zizhuo Wang" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Leetcode records of Zizhuo Wang</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-kth-node-from-end-of-list-lcci" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/09/27/kth-node-from-end-of-list-lcci/" class="article-date">
+  <time class="dt-published" datetime="2020-09-27T11:26:41.000Z" itemprop="datePublished">2020-09-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      kth-node-from-end-of-list-lcci
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="面试题-02-02-返回倒数第-k-个节点"><a href="#面试题-02-02-返回倒数第-k-个节点" class="headerlink" title="面试题 02.02. 返回倒数第 k 个节点"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci/">面试题 02.02. 返回倒数第 k 个节点</a></h4><p>实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。</p>
+<p><strong>注意：</strong>本题相对原题稍作改动</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入： 1-&gt;2-&gt;3-&gt;4-&gt;5 和 k &#x3D; 2</span><br><span class="line">输出： 4</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong></p>
+<p>给定的 <em>k</em> 保证是有效的。</p>
+<h1 id="解（双指针）"><a href="#解（双指针）" class="headerlink" title="解（双指针）"></a>解（双指针）</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">kthToLast</span>(<span class="params">self, head: ListNode, k: int</span>) -&gt; int:</span></span><br><span class="line">        slow,fast=head,head</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">            fast=fast.next</span><br><span class="line">        <span class="keyword">while</span> fast!=<span class="literal">None</span>:</span><br><span class="line">            slow=slow.next</span><br><span class="line">            fast=fast.next</span><br><span class="line">        <span class="keyword">return</span> slow.val</span><br><span class="line">    </span><br><span class="line">执行结果：</span><br><span class="line">通过</span><br><span class="line">显示详情</span><br><span class="line">执行用时：<span class="number">56</span> ms, 在所有 Python3 提交中击败了<span class="number">6.08</span>% 的用户</span><br><span class="line">内存消耗：<span class="number">13.2</span> MB, 在所有 Python3 提交中击败了<span class="number">85.62</span>% 的用户</span><br></pre></td></tr></table></figure>
+
+<h1 id="另解（空间换时间）"><a href="#另解（空间换时间）" class="headerlink" title="另解（空间换时间）"></a>另解（空间换时间）</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">kthToLast</span>(<span class="params">self, head: ListNode, k: int</span>) -&gt; int:</span></span><br><span class="line">        eles=[]</span><br><span class="line">        <span class="keyword">while</span> head!=<span class="literal">None</span>:</span><br><span class="line">            eles.append(head.val)</span><br><span class="line">            head=head.next</span><br><span class="line">        <span class="keyword">return</span> eles[len(eles)-k]</span><br><span class="line">执行结果：</span><br><span class="line">通过</span><br><span class="line">显示详情</span><br><span class="line">执行用时：<span class="number">56</span> ms, 在所有 Python3 提交中击败了<span class="number">6.08</span>% 的用户</span><br><span class="line">内存消耗：<span class="number">13.1</span> MB, 在所有 Python3 提交中击败了<span class="number">99.57</span>% 的用户</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/09/27/kth-node-from-end-of-list-lcci/" data-id="ckfl12p8d0000eww8fz7u4aeb" data-title="kth-node-from-end-of-list-lcci" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linked-List/" rel="tag">Linked List</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easy/" rel="tag">easy</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/27/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linked-List/" rel="tag">Linked List</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Order/" rel="tag">Order</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/array/" rel="tag">array</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/easy/" rel="tag">easy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/" rel="tag">string</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linked-List/" style="font-size: 12.5px;">Linked List</a> <a href="/tags/Order/" style="font-size: 10px;">Order</a> <a href="/tags/array/" style="font-size: 17.5px;">array</a> <a href="/tags/easy/" style="font-size: 20px;">easy</a> <a href="/tags/string/" style="font-size: 15px;">string</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/27/kth-node-from-end-of-list-lcci/">kth-node-from-end-of-list-lcci</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/27/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/">lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/26/convert-binary-number-in-a-linked-list-to-integer/">convert-binary-number-in-a-linked-list-to-integer</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/26/delete-node-in-a-linked-list/">delete-node-in-a-linked-list</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/26/delete-middle-node-lcci/">delete-middle-node-lcci</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2020 Zizhuo Wang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
